@@ -33,7 +33,7 @@ end
 group :development do
   # Access an IRB console on exception pages o by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  gem 'pg'
+  gem 'pg', '~> 0.20'
   gem 'rails_12factor'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
