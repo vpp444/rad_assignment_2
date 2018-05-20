@@ -1,0 +1,23 @@
+<% title @news.title %>
+<p id="notice"><%= notice %></p>
+<div class="container">
+<div class="newsindex">
+       
+     <p><strong><%= @news.title %> | <%= URI.parse(@news.url).host %></strong></p><br>
+     <p>  by <%= @news.user.name %>  <%= time_ago_in_words(@news.created_at) %> ago | <%= @news.comments.count %> comments
+    </p>
+</div>      
+
+<%= render '/comments/form' %>
+
+<h2>List of comments</h2><hr>
+
+<div><p>
+    
+<% @news.comments.each do |comment| %>
+   <%= comment.user %>
+   <%= comment.body %><br>
+<% end %>
+</p></div>
+</div>
+ 

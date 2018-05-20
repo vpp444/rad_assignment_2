@@ -1,0 +1,19 @@
+<% title "New Comments" %>
+
+<p id="notice"><%= notice %></p>
+
+
+
+<table>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <div class="comindex container">
+       <label> <%= comment.user.name %> <%= time_ago_in_words(comment.created_at) %> ago | on: <%= comment.news.title %></label><br>
+        <strong><%= comment.body %></strong>
+      </div>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

@@ -1,0 +1,18 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comindex label{
+    color:grey;
+    font-size:20px;
+}
+textarea#textarea{
+    width:600px;
+    height:300px;
+}
+
+strong{
+    font-size:25px;
+}
+.comindex{
+    padding-top:30px;
+}

@@ -1,0 +1,20 @@
+
+<% title @page_title %>
+<p id="notice"><%= notice %></p>
+<div class="newstable container" >
+<table>
+
+  <tbody>
+    <% @news.each_with_index do |news,index| %>
+      <div class="newsindex">
+        <strong><%= index+1 %>.</strong>
+        <strong><%= news.title %></strong>
+        <strong><%= link_to URI.parse(news.url).host, "#{news.url}" %></strong><br>
+        <p>by <%= news.user.name %> <%= time_ago_in_words(news.created_at) %> ago | <%= news.comments.count %><%= link_to ' comments', news %></p>
+      </div>
+    <% end %>
+  </tbody>
+</table>
+<br>
+  <button><%= link_to "more", news_index_path(page: @page + 1) %></button>
+  </div>

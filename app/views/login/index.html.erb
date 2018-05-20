@@ -1,0 +1,40 @@
+
+ <div class="container">
+   <h1>Login</h1></h1>
+<% if logged_in? %>
+  <%= link_to "logout", logout_path, method: "delete" %>
+<% else %>
+  <%= form_for :session, url: :sessions_create do |f| %>
+     
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+     
+      <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </p>
+     
+      <p><%= f.button "Log in" %></p>
+      <%end%>
+    
+    <h1>Create Account</h1>
+  
+   
+    <%= form_for @user, url: :user_create do |f| %>
+      <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </p>
+     
+      <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </p>
+     
+      <p><%= f.button "Create" %></p>
+    <% end %>
+<% end %>
+
+</div>
