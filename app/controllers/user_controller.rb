@@ -8,10 +8,10 @@ class UserController < ApplicationController
   if @user.save
     login(@user)
    flash[:success] = "Welcome to the Rmit News!"
-   redirect_to :login_index
+   redirect_to :login_url
   else
    flash[:success] = "Fails to match the validation."
-   redirect_to login_path
+   redirect_to :login_url
   end
  end
  
